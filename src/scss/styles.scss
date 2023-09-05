@@ -218,6 +218,7 @@ main {
       .slides {
         position: relative;
         height: 100%;
+        overflow: hidden;
         .slide {
           height: inherit;
           width: 900%;
