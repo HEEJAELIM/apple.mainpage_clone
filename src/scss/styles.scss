@@ -219,18 +219,20 @@ main {
         position: relative;
         height: 100%;
         overflow: hidden;
+        width: 100%;
         .slide {
           height: inherit;
-          width: 900%;
+          width: 480%;
           display: flex;
           transition: 0.5s;
           position: absolute;
           top: 0;
           left: 0;
           div {
+            border: 1px solid #000;
             height: inherit;
-            width: 33.333333%;
-            display: block;
+            width: 60%;
+            display: flex;
             justify-content: center;
             align-items: center;
             background-position: center center;
@@ -279,19 +281,31 @@ main {
         }
       }
       input[id="one"]:checked ~ .slides .slide {
-        left: 0;
+        left: 20%;
       }
       input[id="two"]:checked ~ .slides .slide {
-        left: -100%;
+        left: -30%;
       }
       input[id="three"]:checked ~ .slides .slide {
-        left: -200%;
+        left: -100%;
       }
       input[id="four"]:checked ~ .slides .slide {
-        left: -300%;
+        left: -160%;
       }
       input[id="five"]:checked ~ .slides .slide {
+        left: -220%;
+      }
+      input[id="six"]:checked ~ .slides .slide {
+        left: -280%;
+      }
+      input[id="seven"]:checked ~ .slides .slide {
+        left: -340%;
+      }
+      input[id="eight"]:checked ~ .slides .slide {
         left: -400%;
+      }
+      input[id="nine"]:checked ~ .slides .slide {
+        left: -460%;
       }
     }
   }
