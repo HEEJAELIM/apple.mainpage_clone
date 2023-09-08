@@ -6,17 +6,26 @@
     <script src="./js/jquery-2.1.4.js"></script>
     <!-- Slick.js -->
     <script src="./js/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="./js/slick/slick-theme.scss">
+    <link rel="stylesheet" href="./js/slick/slick.scss">
     <link rel="stylesheet" href="./js/slick/slick.css" />
     <link rel="stylesheet" href="./js/slick/slick-theme.css" />
     <link rel="stylesheet" href="dest/css/styles.css" />
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Icon -->
+    <script src="https://kit.fontawesome.com/357ee75b7c.js" crossorigin="anonymous"></script>
     <title>apple.mainpage_clone</title>
   </head>
   <body>
     <header>
       <nav>
-        <ul>
+        <ul class="nav_ul">
           <li><a href=""><svg height="44" viewBox="0 0 14 44" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m13.0729 17.6825a3.61 3.61 0 0 0 -1.7248 3.0365 3.5132 3.5132 0 0 0 2.1379 3.2223 8.394 8.394 0 0 1 -1.0948 2.2618c-.6816.9812-1.3943 1.9623-2.4787 1.9623s-1.3633-.63-2.613-.63c-1.2187 0-1.6525.6507-2.644.6507s-1.6834-.9089-2.4787-2.0243a9.7842 9.7842 0 0 1 -1.6628-5.2776c0-3.0984 2.014-4.7405 3.9969-4.7405 1.0535 0 1.9314.6919 2.5924.6919.63 0 1.6112-.7333 2.8092-.7333a3.7579 3.7579 0 0 1 3.1604 1.5802zm-3.7284-2.8918a3.5615 3.5615 0 0 0 .8469-2.22 1.5353 1.5353 0 0 0 -.031-.32 3.5686 3.5686 0 0 0 -2.3445 1.2084 3.4629 3.4629 0 0 0 -.8779 2.1585 1.419 1.419 0 0 0 .031.2892 1.19 1.19 0 0 0 .2169.0207 3.0935 3.0935 0 0 0 2.1586-1.1368z"></path></svg></a></li>
-          <li><a href="">스토어</a></li>
+          <li class="store"><a href="">스토어</a></li>
           <li><a href="">Mac</a></li>
           <li><a href="">iPad</a></li>
           <li><a href="">iPhone</a></li>
@@ -31,8 +40,7 @@
           </svg></a></li>
           <li><a href=""></a><svg height="44" viewBox="0 0 14 44" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m11.3535 16.0283h-1.0205a3.4229 3.4229 0 0 0 -3.333-2.9648 3.4229 3.4229 0 0 0 -3.333 2.9648h-1.02a2.1184 2.1184 0 0 0 -2.117 2.1162v7.7155a2.1186 2.1186 0 0 0 2.1162 2.1167h8.707a2.1186 2.1186 0 0 0 2.1168-2.1167v-7.7155a2.1184 2.1184 0 0 0 -2.1165-2.1162zm-4.3535-1.8652a2.3169 2.3169 0 0 1 2.2222 1.8652h-4.4444a2.3169 2.3169 0 0 1 2.2222-1.8652zm5.37 11.6969a1.0182 1.0182 0 0 1 -1.0166 1.0171h-8.7069a1.0182 1.0182 0 0 1 -1.0165-1.0171v-7.7155a1.0178 1.0178 0 0 1 1.0166-1.0166h8.707a1.0178 1.0178 0 0 1 1.0164 1.0166z"></path></svg></li>
         </ul>
-      </nav>
-      <div class="menu active">
+        <div class="menu">
         <div class="menu_list">
           <ul>
             <li>쇼핑하기</li>
@@ -58,14 +66,16 @@
           </ul>
         </div>
       </div>
-      <div class="header_text">
-        <span>iPhone&nbsp;11 이상의 모델을 보상&nbsp;판매하면 iPhone&nbsp;14 또는 iPhone&nbsp;14&nbsp;Pro 구입&nbsp;시 사용할&nbsp;수 있는 ₩250,000-₩870,000 상당의 크레딧이.
+      </nav>
+      
+    </header>
+    <div class="header_text">
+       <span>iPhone&nbsp;11 이상의 모델을 보상&nbsp;판매하면 iPhone&nbsp;14 또는 iPhone&nbsp;14&nbsp;Pro 구입&nbsp;시 사용할&nbsp;수 있는 ₩250,000-₩870,000 상당의 크레딧이.
           <sup><a href="#">1</a></sup>
           <a href="">iPhone 쇼핑하기</a>
         </span>
         <span></span>
-      </div>
-    </header>
+    </div>    
     <main>
       <section>
         <div class="part" onclick="window.open('#')">
@@ -131,6 +141,7 @@
           <span><a href="#">더 알아보기</a><a href="#">구입하기</a></span>
         </div>
       </section>
+
       <section class="part_slide">
         <input type="radio"name="tabmenu" id="one" checked>
         <input type="radio"name="tabmenu" id="two" >
@@ -145,39 +156,39 @@
           <div class="slide">
             <div>
               <button>지금 시청하기</button>
-              <span>스릴러·숨막히는 공중에서의 7시간, 통제권을 쥔 자는 누구인가</span>
+              <span><strong>스릴러</strong>·숨막히는 공중에서의 7시간, 통제권을 쥔 자는 누구인가</span>
             </div>
             <div>
               <button>지금 시청하기</button>
-              <span></span>
+              <span><strong>다큐멘터리</strong>·언더독, 슈퍼스타가 되기까지</span>
             </div>
             <div>
               <button>지금 시청하기</button>
-              <span></span>
+              <span><strong>SF</strong>·모든 제국은 몰락한다</span>
             </div>
             <div>
               <button>지금 시청하기</button>
-              <span></span>
+              <span><strong>드라마</strong>·4개의 세대. 하나의 운명.</span>
             </div>
             <div>
               <button>지금 시청하기</button>
-              <span></span>
+              <span><strong>코미디</strong>·에미상 TV코미디-최우수작품상 포함4개 부문 수상작</span>
             </div>
             <div>
               <button>지금 시청하기</button>
-              <span></span>
+              <span><strong>애니메이션</strong>·때로는 모든 게 꼬일수록 운수대통</span>
             </div>
             <div>
               <button>지금 시청하기</button>
-              <span></span>
+              <span><strong>SF</strong>·진실은 결국 스스로를 드러낸다</span>
             </div>
             <div>
               <button>지금 시청하기</button>
-              <span></span>
+              <span><strong>다큐멘터리</strong>·완전한 미지의 영역, 드디어 베일을 벗다</span>
             </div>
             <div>
               <button>지금 시청하기</button>
-              <span></span>
+              <span><strong>애니메이션</strong>·따듯한 우정, 끝없는 상상, 신나는 모험!</span>
             </div>
           </div>
         </div>
@@ -194,15 +205,117 @@
         </div>
       </section>
     </main>
-    <footer></footer>
+    <footer>
+      <section>
+        <p>1. ₩870,000은 iPhone 13 Pro Max 1TB 모델의 보상 판매 금액으로, 보상 판매 프로그램은 Apple의 파트너이자 독립적으로 운영되는 제3의 업체에 의해 제공됩니다. Apple 및 Apple의 계열사는 고객과 파트너 간 계약의 당사자가 아닙니다. 보상 판매 견적은 예상 금액이며 실제 보상 판매 금액은 예상 금액보다 낮을 수 있습니다. 보상 판매 금액은 보상 판매 대상이 되는 제품의 상태, 연도, 구성에 따라 달라집니다. 일부 기기는 보상 판매 대상이 아닙니다. 크레딧 또는 Apple Store Gift Card로 보상 판매를 받으려면 19세 이상이어야 합니다. 보상 판매 금액은 적용 가능한 새 기기 구입 시 적용하거나 Apple Store Gift Card로 받을 수 있습니다. 최종 확정 금액은 보상 판매 대상 기기를 수령한 후, 예상 금액 산정 시 제시한 기기의 설명과 일치하는지 비교 검수 후 정해집니다. 부가세는 새로 구입한 기기의 총액을 바탕으로 부과됩니다. 일부 매장에서는 보상 판매를 제공하지 않으며, 매장 내 보상 판매와 온라인 보상 판매 프로그램 간 내용에 차이가 있을 수 있습니다. 일부 매장은 추가 요구 사항이 있을 수 있습니다. Apple의 보상 판매 파트너사는 어떤 보상 판매도 거래를 거부하거나, 보상 판매 수량을 제한할 권리를 보유합니다. 적용 가능 기기의 보상 판매 및 재활용에 대한 자세한 내용은 Apple의 보상 판매 파트너사에서 확인할 수 있습니다. 규제 및 제한이 적용될 수 있습니다.</p><br>
+        <span>Apple TV+ 이용을 위해서는 가입이 필요합니다.</span>
+      </section>
+      <section>
+        <ul>
+          <li>쇼핑 및 알아보기</li>
+          <li><a href="">스토어</a></li>
+          <li><a href="">Mac</a></li>
+          <li><a href="">iPad</a></li>
+          <li><a href="">iPhone</a></li>
+          <li><a href="">Watch</a></li>
+          <li><a href="">AirPods</a></li>
+          <li><a href="">TV 및홈</a></li>
+          <li><a href="">AirTag</a></li>
+          <li><a href="">악세사리</a></li>
+        </ul>
+        <ul>
+          <li>Apple지갑</li>
+          <li><a href="">지갑</a></li>
+          <li><a href="">Apple Pay</a></li>
+        </ul>
+        <ul>
+          <li>계정</li>
+          <li><a href="">Apple ID 관리</a></li>
+          <li><a href="">Apple Store 계정</a></li>
+          <li><a href="">iCloud.com</a></li>
+        </ul>
+        <ul>
+          <li>엔터테인먼트</li>
+          <li><a href="">Apple One</a></li>
+          <li><a href="">Apple TV+</a></li>
+          <li><a href="">Apple Music</a></li>
+          <li><a href="">Apple Arcade</a></li>
+          <li><a href="">Apple Podcasts</a></li>
+          <li><a href="">Apple Books</a></li>
+          <li><a href="">App Store</a></li>
+        </ul>
+        <ul>
+          <li>Apple Store</li>
+          <li><a href="">매장 찾기</a></li>
+          <li><a href="">Genius Bar</a></li>
+          <li><a href="">Today at Apple</a></li>
+          <li><a href="">Apple 캠프</a></li>
+          <li><a href="">Apple Store 앱</a></li>
+          <li><a href="">인증 리퍼비쉬 제품</a></li>
+          <li><a href="">Apple Trade In</a></li>
+          <li><a href="">할부 방식</a></li>
+          <li><a href="">주문 상태</a></li>
+          <li><a href="">쇼핑 도움말</a></li>
+        </ul>
+        <ul>
+          <li>비즈니스</li>
+          <li><a href="">Apple과 비즈니스</a></li>
+          <li><a href="">비즈니스를 위한 제품 쇼핑하기</a></li>
+        </ul>
+        <ul>
+          <li>교육</li>
+          <li><a href="">Apple과 교육</a></li>
+          <li><a href="">초중고용 제품 쇼핑하기</a></li>
+          <li><a href="">대학 생활을 위한 제품 쇼핑하기</a></li>
+        </ul>
+        <ul>
+          <li>Apple의 가치관</li>
+          <li><a href="">손쉬운 사용</a></li>
+          <li><a href="">교육</a></li>
+          <li><a href="">환경</a></li>
+          <li><a href="">개인정보 보호</a></li>
+          <li><a href="">협력업체에 대한 책임</a></li>
+        </ul>
+        <ul>
+          <li>Apple 정보</li>
+          <li><a href="">Newsroom</a></li>
+          <li><a href="">Apple 리더십</a></li>
+          <li><a href="">채용 안내</a></li>
+          <li><a href="">윤리 및 규정 준수</a></li>
+          <li><a href="">이벤트</a></li>
+          <li><a href="">일자리 창출</a></li>
+          <li><a href="">Apple 연락처</a></li>
+        </ul>
+        <p>다양한 쇼핑방법: <a href="">Apple Store를 방문</a>하거나, <a href="">리셀러</a>를 찾아보거나, 080-330-8877번으로 전화하세요.</p>
+      </section>
+      <section>
+        <div class="footer_link">
+          <p>Copyright © 2023 Apple Inc. 모든 권리 보유.</p>
+          <ul>
+            <li><a href="">개인정보 처리방침</a></li>
+            <li><a href="">웹사이트 이용 약관</a></li>
+            <li><a href="">판매 및 환불</a></li>
+            <li><a href="">법적 고지</a></li>
+            <li><a href="">사이트 맵</a></li>
+          </ul>
+          <a class="last" href="">대한민국</a>
+        </div>
+        <div class="footer_address">
+          <p>사업자등록번호 : 120-81-84429 | 통신판매업신고번호 : 제 2011-서울강남-00810호 | 대표이사 : PETER DENWOOD | 주소 : 서울 특별시 강남구 영동대로 517 | 대표전화 : 02-6712-6700 |</p>
+          <span>팩스 : 02-6928-0000</span>
+        </div>
+      </section>
+    </footer>
   </body>
     <script src="https://kit.fontawesome.com/6478f529f2.js"></script>
-    <!-- <script src="app.js"></script>
+    <script src="app.js"></script>
     <script>
-      $('.part_slide').slick({
-        centerMode: true,
-        centerPadding: '100px',
-        slidesToShow: 1,
-      });
-    </script> -->
+      $('.store').mouseenter(function() {
+        $('.menu').stop().slideDown()
+
+      })
+      $('.store').mouseleave(function() {
+        $('.menu').stop().slideUp();
+      })      
+    </script>
 </html>

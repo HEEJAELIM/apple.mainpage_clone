@@ -1,0 +1,249 @@
+// @use "_reset.scss";
+@import "_variables";
+@import "_mixins";
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+@import url(http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  font-family: "Lato", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: #424242;
+}
+header {
+  letter-spacing: -0.03em;
+  transition: 0.5s;
+  nav:first-child {
+    width: 100%;
+    background-color: #fafafc;
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      li {
+        padding: 0 1.25%;
+        display: block;
+        // border: 1px solid #000;
+        font-size: 12px;
+      }
+    }
+  }
+  .menu {
+    display: none;
+    background-color: #fff;
+    div {
+      width: 50%;
+      margin: auto;
+      padding-bottom: 3%;
+      display: flex;
+      ul {
+        padding: 3% 0;
+        font-size: 0.7em;
+        &:first-child {
+          padding-right: 10%;
+          font-size: 1.2em;
+          font-weight: 600;
+          li {
+            // border: 1px solid #000;
+            &:first-child {
+              font-size: 0.6em;
+              font-weight: normal;
+              // border: 1px solid #000;
+            }
+          }
+        }
+        &:nth-child(2) {
+          padding-right: 5%;
+        }
+        &:nth-last-child(3) {
+        }
+        li {
+          color: #000;
+          // padding: 5% 0;
+          margin-top: 15px;
+          // border: 1px solid #000;
+          &:first-child {
+            color: red;
+            height: 20px;
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+  .header_text {
+    text-align: center;
+    padding: 0.7% 0;
+    font-size: 0.85em;
+    color: #424242;
+    // border: 1px solid #000;
+    span {
+      a {
+        &:last-child {
+          color: #0066cc;
+        }
+        &::after {
+          content: "\f301";
+        }
+      }
+    }
+  }
+}
+main {
+  // background-color: #000000;
+  height: 100%;
+  width: 100%;
+  section {
+    &:first-child {
+      display: grid;
+      grid-template-rows: repeat(3, 690px);
+      row-gap: 10px;
+      .part {
+        cursor: pointer;
+        background-image: url(https://www.apple.com/v/home/bd/images/heroes/macbook-air-15/hero_macbook_air_15_midnight__ct0pgwizvree_largetall.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        display: grid;
+        grid-template-rows: 1fr 1.7fr;
+        &:nth-child(2) {
+          background-image: url(https://www.apple.com/kr/home/bd/images/heroes/iphone-14/hero_iphone14_yellow__eun20sn4imi6_largetall.jpg);
+        }
+        &:last-child {
+          background-image: url(https://www.apple.com/kr/home/bd/images/heroes/iphone-14-pro/hero_iphone14pro_spring__9xo85pm6sbmm_largetall.jpg);
+          color: #fff;
+        }
+        div {
+          &:first-child {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            h1 {
+              font-size: 3.2em;
+            }
+            h3 {
+              font-size: 1.5em;
+              font-weight: normal;
+            }
+            h5 {
+              display: flex;
+              justify-content: space-between;
+              // border: 1px solid #000;
+              width: 12%;
+              margin-top: 0.7em;
+              font-size: 1.3em;
+              font-weight: normal;
+              a {
+                color: #0066cc;
+              }
+            }
+          }
+        }
+      }
+    }
+    &:nth-child(2) {
+      // height: 200%;
+      display: grid;
+      grid-template-columns: repeat(2, 934px);
+      grid-template-rows: repeat(3, 580px);
+      gap: 12px;
+      // margin: 12px 0 12px 6px;
+      margin: 12px;
+      color: #fff;
+      div {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url(https://www.apple.com/v/home/bd/images/promos/apple-event-september/promo_apple_event_september__c1zbjahmv18i_large.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        h1 {
+          font-size: 2.2em;
+          margin-top: 1.5em;
+        }
+        h3 {
+          font-weight: normal;
+          font-size: 1.2em;
+          margin: 0.1% 0 1.2% 0;
+        }
+        span {
+          width: 20%;
+          display: flex;
+          justify-content: space-between;
+          a {
+            color: #0066cc;
+          }
+        }
+        &:nth-child(1) {
+          justify-content: flex-end;
+          margin-top: 0;
+          span {
+            margin-bottom: 3.2em;
+            justify-content: center;
+          }
+        }
+        &:nth-child(2) {
+          background-image: url(https://www.apple.com/kr/home/bd/images/promos/ipad-pro/promo_ipadpro_refresh__evi9utuixwuq_large.jpg);
+        }
+        &:nth-child(3) {
+          background-image: url(https://www.apple.com/kr/home/bd/images/promos/apple-watch-series-8/promo_apple_watch_series_8_spring__d9hfvufh7hyu_large.jpg);
+        }
+        &:nth-child(4) {
+          background-image: url(https://www.apple.com/v/home/bd/images/promos/airpods-pro/promo_airpods_pro_avail__gaxggskofx6y_large.jpg);
+        }
+        &:nth-child(5) {
+          background-image: url(https://www.apple.com/v/home/bd/images/promos/ipad/promo_ipad__fioegapg12qi_large.jpg);
+          color: #424242;
+        }
+        &:nth-child(6) {
+          background-image: url(https://www.apple.com/v/home/bd/images/promos/macbook-pro-14-and-16/promo_mbp__ek7p477bkp6q_large.jpg);
+        }
+      }
+    }
+    &:nth-child(3) {
+      .slide {
+        div {
+          background-position: center center;
+          background-repeat: no-repeat;
+          &:nth-child(1) {
+            background-image: url(https://is2-ssl.mzstatic.com/image/thumb/ZYgBYqv2vjEdrY8wZSiFAw/1250x703.jpg);
+          }
+          &:nth-child(2) {
+            background-image: url(https://is2-ssl.mzstatic.com/image/thumb/J1wMVEbDSzF0cP98d8m_gA/1250x703.jpg);
+          }
+          &:nth-child(3) {
+            background-image: url(https://is1-ssl.mzstatic.com/image/thumb/JX16FVjo_Z7znz4m-TkjkA/1250x703.jpg);
+          }
+          &:nth-child(4) {
+            background-image: url(https://is4-ssl.mzstatic.com/image/thumb/I25UvCTJzFPQZ7dAB6BFRg/1250x703.jpg);
+          }
+          &:nth-child(5) {
+            background-image: url(https://is2-ssl.mzstatic.com/image/thumb/EviF5KEP5X6ycr0I5QR_IA/1250x703.jpg);
+          }
+          &:nth-child(6) {
+            background-image: url(https://is4-ssl.mzstatic.com/image/thumb/CkBnY85jwna1fuSpPrqCmQ/1250x703.jpg);
+          }
+          &:nth-child(7) {
+            background-image: url(https://is2-ssl.mzstatic.com/image/thumb/gMjB2Z2TTM1gsL5A_rGAKw/1250x703.jpg);
+          }
+          &:nth-child(8) {
+            background-image: url(https://is2-ssl.mzstatic.com/image/thumb/tYkZknJI_uIjNg9jjLGFog/1250x703.jpg);
+          }
+          &:nth-child(9) {
+            background-image: url(https://is3-ssl.mzstatic.com/image/thumb/bsuHwZjhSeAGu-2QCWn3wQ/1250x703.jpg);
+          }
+        }
+      }
+    }
+  }
+}
